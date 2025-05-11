@@ -2,7 +2,7 @@
 
 This attempt was made without using AI during the development process. I started at 1pm on May 11, 2025 and stopped at right around 3pm (some time was spent at the end creating this repository and uploading the code).
 
-Shortly after completing the non-AI version, I went ahead and tried to build the same project using ChatGPT as an aide. That version is [located here](https://github.com/natedugg/icapital-with-ai).
+Shortly after getting to the end of the non-AI version, I went ahead and tried to build the same project using ChatGPT as an aide. That version is [located here](https://github.com/natedugg/icapital-with-ai).
 
 ## No Vibe Coding
 
