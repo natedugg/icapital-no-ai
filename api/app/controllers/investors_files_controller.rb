@@ -1,0 +1,2 @@
+class InvestorsFilesController < ApplicationController
+end

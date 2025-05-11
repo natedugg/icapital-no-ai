@@ -1,0 +1,435 @@
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE DATABASE `api_development` DEFAULT CHARACTER SET `utf8mb4` /*application='Api'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `api_test` DEFAULT CHARACTER SET `utf8mb4` /*application='Api'*/[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) /*application='Api'*/[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (81.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-05-11 17:27:24.880656', '2025-05-11 17:27:24.880657') /*application='Api'*/[0m
+Migrating to CreateInvestorsSchema (20250511172225)
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820') /*application='Api'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Api'*/[0m
+Migrating to CreateInvestorsSchema (20250511172225)
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE `investors` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `date_of_birth` date NOT NULL, `phone` varchar(255) NOT NULL, `address_1` varchar(255) NOT NULL, `address_2` varchar(255), `state` varchar(255) NOT NULL, `zip` varchar(255) NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250511172225') /*application='Api'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820') /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Api'*/[0m
+Migrating to AddInvestorsFilesTable (20250511172823)
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE `investors_files` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `file_name` varchar(255) NOT NULL, `file_size` int, `investors_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_investors_files_on_investors_id` (`investors_id`)) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250511172823') /*application='Api'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820') /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Api'*/[0m
+Migrating to DropInvestorsFilesTable (20250511173212)
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE `investors_files` /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250511173212') /*application='Api'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820') /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Api'*/[0m
+Migrating to AddInvestorsFilesTable (20250511173259)
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE `investors_files` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `file_name` varchar(255) NOT NULL, `file_size` int, `investors_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_investors_files_on_investors_id` (`investors_id`), CONSTRAINT `fk_rails_9f54b9bd00`
+FOREIGN KEY (`investors_id`)
+  REFERENCES `investors` (`id`)
+) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250511173259') /*application='Api'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820') /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/investors" for ::1 at 2025-05-11 13:39:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+Processing by InvestorsController#create as */*
+  Parameters: {"name" => "bob"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'city' for Investor.)
+Caused by: NoMethodError (undefined method 'city=' for an instance of Investor)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'city' for Investor.):
+  
+app/controllers/investors_controller.rb:15:in 'InvestorsController#create'
+
+Information for cause: NoMethodError (undefined method 'city=' for an instance of Investor):
+  
+app/controllers/investors_controller.rb:15:in 'InvestorsController#create'
+Started POST "/investors" for ::1 at 2025-05-11 13:40:36 -0400
+Processing by InvestorsController#create as */*
+  Parameters: {"name" => "bob"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.9ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'is_active' for Investor.)
+Caused by: NoMethodError (undefined method 'is_active=' for an instance of Investor)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'is_active' for Investor.):
+  
+app/controllers/investors_controller.rb:15:in 'InvestorsController#create'
+
+Information for cause: NoMethodError (undefined method 'is_active=' for an instance of Investor):
+  
+app/controllers/investors_controller.rb:15:in 'InvestorsController#create'
+Started POST "/investors" for ::1 at 2025-05-11 13:40:59 -0400
+Processing by InvestorsController#create as */*
+  Parameters: {"name" => "bob"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mInvestor Create (1.0ms)[0m  [1m[32mINSERT INTO `investors` (`first_name`, `last_name`, `date_of_birth`, `phone`, `address_1`, `address_2`, `state`, `zip`, `created_at`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-05-11 17:40:59.362281', '2025-05-11 17:40:59.362281') /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 4.8ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Column 'first_name' cannot be null)
+Caused by: Mysql2::Error (Column 'first_name' cannot be null)
+
+Information for: ActiveRecord::NotNullViolation (Mysql2::Error: Column 'first_name' cannot be null):
+  
+
+Information for cause: Mysql2::Error (Column 'first_name' cannot be null):
+  
+app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Started GET "/investors" for ::1 at 2025-05-11 13:41:09 -0400
+Processing by InvestorsController#index as */*
+  Parameters: {"name" => "bob"}
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'InvestorsController#index'
+Completed 200 OK in 21ms (Views: 0.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/investors" for ::1 at 2025-05-11 13:42:30 -0400
+Processing by InvestorsController#create as */*
+  Parameters: {"first_name" => "bob", "last_name" => "johnson", "date_of_birth" => "12-25-1975", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mInvestor Create (1.5ms)[0m  [1m[32mINSERT INTO `investors` (`first_name`, `last_name`, `date_of_birth`, `phone`, `address_1`, `address_2`, `state`, `zip`, `created_at`, `updated_at`) VALUES ('bob', 'johnson', NULL, '234-234-5326', '432 elm st.', NULL, 'VA', '34212', '2025-05-11 17:42:30.834190', '2025-05-11 17:42:30.834190') /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::NotNullViolation (Mysql2::Error: Column 'date_of_birth' cannot be null)
+Caused by: Mysql2::Error (Column 'date_of_birth' cannot be null)
+
+Information for: ActiveRecord::NotNullViolation (Mysql2::Error: Column 'date_of_birth' cannot be null):
+  
+
+Information for cause: Mysql2::Error (Column 'date_of_birth' cannot be null):
+  
+app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Started POST "/investors" for ::1 at 2025-05-11 13:43:33 -0400
+  
+SyntaxError (/Users/nathansequeira/src/interviews/icapital/api/app/controllers/investors_controller.rb:25: syntax error found
+  [2m23 | [m        state: params[:state],
+  [2m24 | [m        zip: params[:zip]
+[1;31m> [m[2m25 | [m      }
+  [2m   | [m[1;31m^[m expected a matching `]`
+  [2m26 | [m    )
+  [2m27 | [m    investor.save!
+):
+  
+app/controllers/investors_controller.rb:25: syntax error found
+Started POST "/investors" for ::1 at 2025-05-11 13:43:55 -0400
+Processing by InvestorsController#create as */*
+  Parameters: {"first_name" => "bob", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mInvestor Create (0.9ms)[0m  [1m[32mINSERT INTO `investors` (`first_name`, `last_name`, `date_of_birth`, `phone`, `address_1`, `address_2`, `state`, `zip`, `created_at`, `updated_at`) VALUES ('bob', 'johnson', '1975-12-25', '234-234-5326', '432 elm st.', NULL, 'VA', '34212', '2025-05-11 17:43:55.701514', '2025-05-11 17:43:55.701514') /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 4.4ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started PUT "/investors/1" for ::1 at 2025-05-11 13:44:19 -0400
+Processing by InvestorsController#edit as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212", "investor_id" => "1"}
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` WHERE `investors`.`id` = 1 LIMIT 1 /*action='edit',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:34:in 'InvestorsController#edit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='edit',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:49:in 'InvestorsController#edit'
+  [1m[36mInvestor Update (1.3ms)[0m  [1m[33mUPDATE `investors` SET `investors`.`first_name` = 'bobby', `investors`.`updated_at` = '2025-05-11 17:44:19.936316' WHERE `investors`.`id` = 1 /*action='edit',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:49:in 'InvestorsController#edit'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*action='edit',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:49:in 'InvestorsController#edit'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/investors/1" for ::1 at 2025-05-11 13:46:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+Processing by InvestorsController#delete as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212", "investor_id" => "1"}
+  [1m[36mInvestor Load (0.3ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` WHERE `investors`.`id` = 1 LIMIT 1 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:55:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mInvestor Destroy (0.7ms)[0m  [1m[31mDELETE FROM `investors` WHERE `investors`.`id` = 1 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 7.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/investors" for ::1 at 2025-05-11 14:33:53 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+Processing by InvestorsController#create as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/investor.rb:2:in '<class:Investor>'
+app/models/investor.rb:1:in '<main>'
+app/controllers/investors_controller.rb:15:in 'InvestorsController#create'
+Started POST "/investors" for ::1 at 2025-05-11 14:38:52 -0400
+Processing by InvestorsController#create as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mInvestor Create (1.1ms)[0m  [1m[32mINSERT INTO `investors` (`first_name`, `last_name`, `date_of_birth`, `phone`, `address_1`, `address_2`, `state`, `zip`, `created_at`, `updated_at`) VALUES ('bobby', 'johnson', '1975-12-25', '234-234-5326', '432 elm st.', NULL, 'VA', '34212', '2025-05-11 18:38:52.993504', '2025-05-11 18:38:52.993504') /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 23.1ms (1 query, 0 cached) | GC: 11.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'api_development.investor_files' doesn't exist)
+Caused by: Mysql2::Error (Table 'api_development.investor_files' doesn't exist)
+
+Information for: ActiveRecord::StatementInvalid (Mysql2::Error: Table 'api_development.investor_files' doesn't exist):
+  
+
+Information for cause: Mysql2::Error (Table 'api_development.investor_files' doesn't exist):
+  
+app/controllers/investors_controller.rb:77:in 'Enumerable#map'
+app/controllers/investors_controller.rb:77:in 'InvestorsController#investor_mapper'
+app/controllers/investors_controller.rb:29:in 'InvestorsController#create'
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0) /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='Api'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820') /*application='Api'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+Started POST "/investors" for ::1 at 2025-05-11 14:40:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+Processing by InvestorsController#create as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mInvestor Create (1.0ms)[0m  [1m[32mINSERT INTO `investors` (`first_name`, `last_name`, `date_of_birth`, `phone`, `address_1`, `address_2`, `state`, `zip`, `created_at`, `updated_at`) VALUES ('bobby', 'johnson', '1975-12-25', '234-234-5326', '432 elm st.', NULL, 'VA', '34212', '2025-05-11 18:40:11.097387', '2025-05-11 18:40:11.097387') /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 6.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method 'investors_files' for an instance of Investor):
+  
+app/controllers/investors_controller.rb:77:in 'InvestorsController#investor_mapper'
+app/controllers/investors_controller.rb:29:in 'InvestorsController#create'
+Started POST "/investors" for ::1 at 2025-05-11 14:42:08 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+Processing by InvestorsController#create as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mInvestor Create (0.9ms)[0m  [1m[32mINSERT INTO `investors` (`first_name`, `last_name`, `date_of_birth`, `phone`, `address_1`, `address_2`, `state`, `zip`, `created_at`, `updated_at`) VALUES ('bobby', 'johnson', '1975-12-25', '234-234-5326', '432 elm st.', NULL, 'VA', '34212', '2025-05-11 18:42:08.223869', '2025-05-11 18:42:08.223869') /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*action='create',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:27:in 'InvestorsController#create'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method 'investors_files' for an instance of Investor):
+  
+app/controllers/investors_controller.rb:77:in 'InvestorsController#investor_mapper'
+app/controllers/investors_controller.rb:29:in 'InvestorsController#create'
+Started GET "/investors" for ::1 at 2025-05-11 14:43:44 -0400
+Processing by InvestorsController#index as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method 'investors_files' for an instance of Investor):
+  
+app/controllers/investors_controller.rb:77:in 'InvestorsController#investor_mapper'
+app/controllers/investors_controller.rb:4:in 'block in InvestorsController#index'
+app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+app/controllers/investors_controller.rb:4:in 'InvestorsController#index'
+Started GET "/investors" for ::1 at 2025-05-11 14:44:01 -0400
+Processing by InvestorsController#index as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 3.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:44:30 -0400
+Processing by InvestorsController#index as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:45:44 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:45:44 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.3ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:46:41 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='Api'*/[0m
+Processing by InvestorsController#index as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mInvestor Load (1.2ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/investors/3" for ::1 at 2025-05-11 14:46:57 -0400
+Processing by InvestorsController#delete as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212", "investor_id" => "3"}
+  [1m[36mInvestor Load (0.5ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` WHERE `investors`.`id` = 3 LIMIT 1 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:55:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mInvestor Destroy (1.3ms)[0m  [1m[31mDELETE FROM `investors` WHERE `investors`.`id` = 3 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/investors/4" for ::1 at 2025-05-11 14:47:00 -0400
+Processing by InvestorsController#delete as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212", "investor_id" => "4"}
+  [1m[36mInvestor Load (0.6ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` WHERE `investors`.`id` = 4 LIMIT 1 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:55:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mInvestor Destroy (1.5ms)[0m  [1m[31mDELETE FROM `investors` WHERE `investors`.`id` = 4 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:47:07 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:47:07 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.3ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:47:17 -0400
+Processing by InvestorsController#index as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212"}
+  [1m[36mInvestor Load (0.5ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/investors/2" for ::1 at 2025-05-11 14:47:24 -0400
+Processing by InvestorsController#delete as */*
+  Parameters: {"first_name" => "bobby", "last_name" => "johnson", "date_of_birth" => "1975-12-25", "phone" => "234-234-5326", "address_1" => "432 elm st.", "state" => "VA", "zip" => "34212", "investor_id" => "2"}
+  [1m[36mInvestor Load (0.5ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` WHERE `investors`.`id` = 2 LIMIT 1 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:55:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mInvestor Destroy (1.2ms)[0m  [1m[31mDELETE FROM `investors` WHERE `investors`.`id` = 2 /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT /*action='delete',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:58:in 'InvestorsController#delete'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:47:26 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:47:26 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.4ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:47:47 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.7ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 14:47:47 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.5ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 15:01:52 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (1.0ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/investors" for ::1 at 2025-05-11 15:01:52 -0400
+Processing by InvestorsController#index as */*
+  [1m[36mInvestor Load (0.3ms)[0m  [1m[34mSELECT `investors`.* FROM `investors` /*action='index',application='Api',controller='investors'*/[0m
+  ↳ app/controllers/investors_controller.rb:4:in 'Enumerable#map'
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
