@@ -81,7 +81,9 @@ rails server -p 3000
 ## Front end (React)
 
 ### Prerequisites
-- Node
+- Node 
+
+### Setup
 
 1. **Front end setup**
 ```
