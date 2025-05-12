@@ -52,6 +52,11 @@ Since this implementation was very imcomplete, there are many additions and enha
 - **UNIT TESTS**
   - Obviously this implementation could never be considered fully complete without unit tests. I'd add controller tests to the API to cover the endpoints and component tests on the front end to verify usability, with special emphasis on testing the form component.
 
+## Screen shot
+
+<img width="1365" alt="icapital-no-ai-list-page" src="https://github.com/user-attachments/assets/a7e00ad6-07f5-4268-be70-baba98190db6" />
+
+
 ## Configuration
 
 1. **Clone the repo**
