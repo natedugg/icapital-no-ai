@@ -28,7 +28,7 @@ DELETE /investors/:investor_id
 - `InvestorForm` component that, given more time, *would* have been reused by the `Add` and `Edit` components for adding and editing investors, respectively [NOTE: The `Edit` component is currently broken due to a missing import of `InvestorForm`]; uses Formik for form validation
 - Top level Typescript definitions located in `/src/types.ts`
 - API services for investors split out into a dedicated services file `/src/services/investors.ts`
-- API base value (http://localhost:3000) set in a constant value located in `/.env`
+- Use of environment variables located in `/.env`
 
 Note: I did spend time on basic UI styling that I now realize should have been spent on features, given the two hour time limit.
 
