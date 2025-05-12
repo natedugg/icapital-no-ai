@@ -49,7 +49,7 @@ Since this implementation was very imcomplete, there are many additions and enha
       - first the client requests a pre-signed download URL from the API, using the file ID from the database
       - the client can then directly access the full file using the pre-signed download URL
 - The ability to merge accounts based on matching names / SSNs
-  - when adding a new investor and checking for property matches within existing investor accounts, use the union-find / disjoint-set algorithm to generate the list of matching accounts
+  - when adding a new investor and checking for property matches within existing investor accounts, possibly using the union-find / disjoint-set algorithm to generate the list of matching accounts
   - on the client side, give the admin use the option to decide how, or in what direction, to merge the accounts
 - **UNIT TESTS**
   - Obviously this implementation could never be considered fully complete without unit tests. I'd add controller tests to the API to cover the endpoints and component tests on the front end to verify usability, with special emphasis on testing the form component.
