@@ -80,6 +80,9 @@ rails server -p 3000
 
 ## Front end (React)
 
+### Prerequisites
+- Noid
+
 1. **Front end setup**
 ```
 cd ../frontend
