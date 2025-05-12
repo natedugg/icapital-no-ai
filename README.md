@@ -4,7 +4,7 @@ This repository contains my first attempt to complete the [iCapital Identity Tea
 
 I started at 1pm on May 11, 2025 and stopped at right around 3pm (with a few extra minutes spent creating this repository and uploading the code).
 
-Shortly after getting to the end of the non-AI version, I realized that I hadn't actually accomplished very much, as described more below. I decided to go ahead and try to build the same project using ChatGPT as an aide. That version, if you're interested, is [located here](https://github.com/natedugg/icapital-with-ai).
+Shortly after getting to the end of the non-AI version, I realized that I hadn't actually accomplished very much, as described more below. I decided to go ahead and try to build the same project using ChatGPT as an aide, and also working with the two hour time limit. That version, if you're interested, is [located here](https://github.com/natedugg/icapital-with-ai).
 
 ## No Vibe Coding
 
