@@ -54,6 +54,12 @@ Since this implementation was very imcomplete, there are many additions and enha
 
 ## Configuration
 
+1. **Clone the repo**
+```bash
+git clone <repo-url>
+cd icapital-no-ai
+```
+
 ## Back end (Ruby on Rails)
 
 ### Prerequisites
@@ -63,13 +69,7 @@ Since this implementation was very imcomplete, there are many additions and enha
 
 ### Setup
 
-1. **Clone the repo**
-```bash
-git clone <repo-url>
-cd icapital-no-ai
-```
-
-2. **Back end setup**
+1. **Back end setup**
 ```
 cd api
 bundle install
