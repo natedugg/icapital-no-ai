@@ -53,6 +53,7 @@ Since this implementation was very imcomplete, there are many additions and enha
   - on the client side, give the admin use the option to decide how, or in what direction, to merge the accounts
 - **UNIT TESTS**
   - Obviously this implementation could never be considered fully complete without unit tests. I'd add controller tests to the API to cover the endpoints and component tests on the front end to verify usability, with special emphasis on testing the form component.
+    - Would definitely want to have integration tests verifing the end-to-end file upload capability
 
 ## Screen shot
 
