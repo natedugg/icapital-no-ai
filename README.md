@@ -6,7 +6,9 @@ Shortly after getting to the end of the non-AI version, I went ahead and tried t
 
 ## No Vibe Coding
 
-I started working on this project with the intent to see how far I could get without using any AI assistance. Ultimately, I didn't get very far at all, unfortunately. Most notibly, although I was able to add the database models for investors and investors files, and a basic front end for listing and adding investors, I ran out of time and did not implement file upload in the controller or on the front end. Here's what I did manage to accomplish:
+I started working on this project with the intent to see how far I could get without using any AI assistance. Ultimately, I didn't get very far at all, unfortunately. Most notibly, although I was able to add the database models for investors and investors files, and a basic front end for listing and adding investors, I ran out of time and did not implement file upload in the controller or on the front end. Most of the two hours was spent setting up scaffolding and configuration for the front and back end applications, i.e. database config, front-end component structure, routing, etc. By the time I got to fleshing out the actual features, most of that time was already gone.
+
+Here's what I did manage to accomplish:
 
 1. Back end:
 - API returns a list of saved investors (without related files)
