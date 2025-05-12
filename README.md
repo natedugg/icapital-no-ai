@@ -55,6 +55,7 @@ Beyond the MVP, there are many other additions and enhancements that I would hav
 - The ability to merge accounts based on matching names / SSNs
   - when adding a new investor and checking for property value matches within existing investor accounts, possibly use the union-find / disjoint-set algorithm to generate the list of matching accounts
   - on the client side, give the administrator the option to decide how, or in what direction, to merge accounts with matching values
+- Uploaded file preview / download
 - **UNIT TESTS**
   - Obviously this feature could never be considered fully complete without unit tests. I'd add controller tests to the API to cover the endpoints and component tests on the front end to verify usability, with special emphasis on testing the form component.
 - **END-TO-END INTEGRATION TESTS**
